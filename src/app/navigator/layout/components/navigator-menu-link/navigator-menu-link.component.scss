@@ -1,0 +1,31 @@
+
+.navigator-menu {
+  &__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+    text-decoration: none;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    margin-right: 12px;
+
+    & img {
+      display: block;
+      //fill: #fff;
+    }
+  }
+
+  &__label {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}

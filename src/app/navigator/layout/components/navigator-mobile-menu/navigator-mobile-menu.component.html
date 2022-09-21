@@ -1,0 +1,6 @@
+<nav class="navigator-mobile">
+  <a *ngFor="let link of links" [queryParams]="link.params" [routerLink]="link.route | navPath"
+     class="navigator-mobile__link">
+    {{ link.label }}
+  </a>
+</nav>

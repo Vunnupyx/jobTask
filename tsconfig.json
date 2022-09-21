@@ -1,0 +1,49 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "types": ["node"],
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@app/ui/theme/layout": ["src/app/ui/theme/layout/index.ts"],
+      "@app/ui/theme/utils": ["src/app/ui/theme/utils/index.ts"],
+      "@app/ui/grid": ["src/app/ui/grid/index.ts"],
+      "@app/ui/container": ["src/app/ui/container/index.ts"],
+      "@app/core/navigation/common": ["src/app/core/navigation/common/index.ts"],
+      "@app/core/navigation/service": ["src/app/core/navigation/service/index.ts"],
+      "@app/core/navigation/shared": ["src/app/core/navigation/shared/index.ts"],
+      "@app/core/common": ["src/app/core/common/index.ts"],
+      "@app/core/store/root": ["src/app/core/store/root/index.ts"],
+      "@app/core/store/utils": ["src/app/core/store/utils/index.ts"],
+      "@app/home/page": ["src/app/home/page/index.ts"],
+      "@app/navigator/common": ["src/app/navigator/common/index.ts"],
+      "@app/navigator/layout": ["src/app/navigator/layout/index.ts"],
+      "@app/navigator/page": ["src/app/navigator/page/index.ts"],
+      "@app/navigator/menu": ["src/app/navigator/menu/index.ts"],
+      "@app/navigator/list": ["src/app/navigator/list/index.ts"],
+      "@app/navigator/storage": ["src/app/navigator/storage/index.ts"],
+      "@app/navigator/state": ["src/app/navigator/state/index.ts"],
+      "@app/navigator/service": ["src/app/navigator/service/index.ts"]
+    }
+  },
+
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

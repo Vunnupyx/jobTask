@@ -1,0 +1,18 @@
+<app-container>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">№</th>
+      <th scope="col">Имя</th>
+      <th scope="col">Сумма</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let list of lists; let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{list.name.first}} {{list.name.last}}</td>
+      <td>{{list.amount}}</td>
+    </tr>
+    </tbody>
+  </table>
+</app-container>

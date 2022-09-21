@@ -1,0 +1,20 @@
+<ng-container *ngIf="isDesktopScreen; then desktopTpl; else mobileTpl"></ng-container>
+<ng-template #desktopTpl>
+  <app-container height="max-height" mode="fluid">
+    <app-row mode="md">
+      <app-column [modes]="{ md: 4, lg: 3, xl: 2 }" class="list-menu">
+        <app-navigator-desktop-menu></app-navigator-desktop-menu>
+      </app-column>
+      <app-column [modes]="{ md: 10, lg: 13, xl: 14 }">
+        <router-outlet></router-outlet>
+      </app-column>
+    </app-row>
+  </app-container>
+</ng-template>
+
+<ng-template #mobileTpl>
+  <app-navigator-mobile-menu class="list-menu"></app-navigator-mobile-menu>
+  <app-container height="max-height" mode="fluid">
+    <router-outlet></router-outlet>
+  </app-container>
+</ng-template>

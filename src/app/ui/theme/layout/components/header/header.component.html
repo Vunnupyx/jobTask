@@ -1,0 +1,41 @@
+<ng-container *ngIf="isDesktopScreen; then desktopTpl; else mobileTpl"></ng-container>
+
+
+<ng-template #desktopTpl>
+  <header class="header">
+    <div class="header__content">
+      <a [routerLink]="NavigationPath.Home | navPath" class="header__logo-link">
+        <img src="assets/images/icon_logo.png" width="52" height="52" alt="Логотип">
+      </a>
+        <ul class="nav">
+          <li class="nav__item"><a class="nav__link" [routerLink]="NavigationPath.Home | navPath">Резюме</a></li>
+          <li class="nav__item"><a class="nav__link" [routerLink]="NavigationPath.List" [queryParams]="{tab: 1}">Список</a></li>
+        </ul>
+    </div>
+  </header>
+</ng-template>
+
+<ng-template #mobileTpl>
+  <header class="header">
+    <div class="header__content">
+      <div (click)="toggleSideNav()" class="menu-toggle">
+        <div class="menu-toggle__icon"></div>
+      </div>
+      <a href="/" class="header__logo-link">
+        <img src="assets/images/icon_logo.png" width="52" height="52" alt="Логотип">
+      </a>
+    </div>
+    <app-side-nav [sidenavTemplateRef]="navContent"
+                  [navWidth]="280"
+                  [duration]="0.5"></app-side-nav>
+  </header>
+</ng-template>
+
+
+
+<ng-template #navContent>
+    <ul class="mobile-nav">
+      <li (click)="toggleSideNav()" class="mobile-nav__item"><a class="mobile-nav__link" [routerLink]="NavigationPath.Home | navPath">Резюме</a></li>
+      <li class="mobile-nav__item"><a class="mobile-nav__link" [routerLink]="NavigationPath.List | navPath" [queryParams]="{tab: 1}">Список</a></li>
+    </ul>
+</ng-template>

@@ -1,0 +1,7 @@
+<a *ngIf="link" [queryParams]="link.params" [routerLink]="link.route | navPath"
+   class="navigator-menu__link">
+  <span class="navigator-menu__icon">
+    {{link.params?.tab}}
+  </span>
+  <span class="navigator-menu__label">{{ link.label }}</span>
+</a>
