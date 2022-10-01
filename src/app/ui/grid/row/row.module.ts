@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 
-import {RowComponent} from '@app/ui/grid';
+import {RowComponent} from './row.component';
 
 @NgModule({
   declarations: [RowComponent],
