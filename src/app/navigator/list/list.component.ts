@@ -4,6 +4,7 @@ import {ListService} from "@app/navigator/service";
 import {takeUntil, tap} from "rxjs/operators";
 import {ListDto} from "@app/navigator/common";
 import {Subject} from "rxjs";
+import {ListFacade} from "@app/navigator/state";
 
 @Component({
   selector: 'app-list',
@@ -16,10 +17,11 @@ export class ListComponent implements OnInit {
 
   private readonly destroy$ = new Subject<void>();
 
-  constructor(private readonly activatedRoute: ActivatedRoute, private router: Router, private readonly changeDetectorRef: ChangeDetectorRef, private readonly listService: ListService) {
+  constructor(private listFacade: ListFacade, private readonly activatedRoute: ActivatedRoute, private router: Router, private readonly changeDetectorRef: ChangeDetectorRef, private readonly listService: ListService) {
   }
 
   ngOnInit(): void {
+    this.listFacade.load();
     this.activatedRoute.queryParams
       .subscribe((queryParams: Params) => {
         this.listService.lists$(queryParams['tab'])

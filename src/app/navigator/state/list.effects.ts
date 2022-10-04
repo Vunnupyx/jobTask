@@ -1,14 +1,13 @@
 import {Injectable} from '@angular/core';
-import {Actions, createEffect, ofType, OnInitEffects} from '@ngrx/effects';
-import {Action} from '@ngrx/store';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {map} from 'rxjs/operators';
 
-import { fetch } from '@app/core/store/utils';
+import {fetch} from '@app/core/store/utils';
 import {ListStorage} from '@app/navigator/storage';
 import * as ListActions from './list.actions';
 
 @Injectable()
-export class ListEffects implements OnInitEffects {
+export class ListEffects {
   loadLists$ = createEffect(() =>
     this.actions$.pipe(
       ofType(ListActions.loadLists),
@@ -27,7 +26,7 @@ export class ListEffects implements OnInitEffects {
   ) {
   }
 
-  ngrxOnInitEffects(): Action {
+  /*ngrxOnInitEffects(): Action {
     return ListActions.loadLists();
-  }
+  }*/
 }
